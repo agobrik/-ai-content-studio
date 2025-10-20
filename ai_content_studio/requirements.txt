@@ -1,0 +1,46 @@
+# AI Content Studio - Dependencies
+# Python 3.9-3.12 recommended (3.13 has limited support)
+
+# GUI Framework
+PyQt6>=6.6.0
+
+# Stable Diffusion Dependencies
+# Note: Install PyTorch from PyTorch repository for Windows DLL support:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.25.0
+transformers>=4.35.0
+accelerate>=0.26.0
+safetensors>=0.4.0
+omegaconf>=2.3.0
+
+# 3D Model Generation Dependencies
+trimesh>=4.0.0
+numpy>=1.24.0
+Pillow>=10.0.0
+scipy>=1.11.0
+# MiDaS for depth estimation (high-quality 3D from 2D)
+timm>=0.9.0  # Required for MiDaS depth estimation
+# Background removal for better 3D conversion
+rembg>=2.0.0
+# Optional: TripoSR for best quality (requires manual setup)
+# See documentation for TripoSR installation instructions
+
+# TTS Dependencies
+gTTS>=2.5.0
+
+# Utilities
+requests>=2.31.0
+tqdm>=4.66.0
+matplotlib>=3.8.0
+opencv-python>=4.9.0
+
+# Audio processing
+soundfile>=0.12.0
+
+# Model management
+huggingface-hub>=0.20.0
+
+# Configuration
+pyyaml>=6.0.0

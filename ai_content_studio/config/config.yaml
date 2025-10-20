@@ -1,0 +1,78 @@
+# AI Content Studio Configuration
+
+# Application Settings
+app:
+  name: "AI Content Studio"
+  version: "1.0.0"
+  window_width: 1200
+  window_height: 800
+
+# Model Settings
+models:
+  stable_diffusion:
+    default_model: "stabilityai/stable-diffusion-xl-base-1.0"
+    use_refiner: false  # Enable for even higher quality (requires more VRAM)
+    available_models:
+      - "stabilityai/stable-diffusion-xl-base-1.0"  # Best quality (RECOMMENDED)
+      - "stabilityai/stable-diffusion-2-1"
+      - "runwayml/stable-diffusion-v1-5"
+    cache_dir: "./models/stable_diffusion"
+
+  triposr:
+    model_name: "stabilityai/TripoSR"
+    cache_dir: "./models/triposr"
+    # TripoSR generates REAL volumetric 3D models (not flat extrusions)
+    # Install: pip install git+https://github.com/VAST-AI-Research/TripoSR.git
+    # Fallback methods: MiDaS (depth-based) or Extrusion (simple relief)
+
+  tts:
+    default_engine: "edge"  # Options: edge (high quality), gtts (simple), pyttsx3 (offline)
+    # Edge-TTS: Microsoft Edge voices (FREE, high quality, requires internet)
+    # Install: pip install edge-tts
+    cache_dir: "./models/tts"
+    supported_languages:
+      - "en"  # English
+      - "es"  # Spanish
+      - "fr"  # French
+      - "de"  # German
+      - "it"  # Italian
+      - "pt"  # Portuguese
+      - "pl"  # Polish
+      - "tr"  # Turkish
+      - "ru"  # Russian
+      - "nl"  # Dutch
+      - "cs"  # Czech
+      - "ar"  # Arabic
+      - "zh-cn"  # Chinese
+      - "ja"  # Japanese
+      - "ko"  # Korean
+      - "hu"  # Hungarian
+      - "hi"  # Hindi
+
+# Output Settings
+output:
+  base_dir: "./output"
+  image_format: "png"
+  audio_format: "wav"
+  model_3d_format: "glb"
+
+# Generation Settings
+generation:
+  image:
+    default_steps: 40  # Optimal for SDXL (30-50)
+    default_guidance_scale: 7.0  # Optimal for SDXL (7.0-9.0)
+    default_width: 1024  # SDXL native resolution
+    default_height: 1024  # SDXL native resolution
+    transparent_background: false  # Enable for transparent PNG output
+
+  model_3d:
+    default_resolution: 256
+
+  tts:
+    default_sample_rate: 22050
+    default_speed: 1.0
+
+# Hardware Settings
+hardware:
+  use_gpu: true
+  device: "auto"  # auto, cuda, cpu

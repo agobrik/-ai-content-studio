@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# AI Models (large files)
+models/stable_diffusion/
+models/triposr/
+models/tts/
+
+# Output files
+output/images/*.png
+output/images/*.jpg
+output/images/*.jpeg
+output/models_3d/*.glb
+output/models_3d/*.obj
+output/models_3d/*.stl
+output/audio/*.wav
+output/audio/*.mp3
+
+# Keep directory structure but ignore contents
+!output/images/.gitkeep
+!output/models_3d/.gitkeep
+!output/audio/.gitkeep
+
+# PyQt settings
+*.ini
+.qt_for_python/
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
